@@ -1,13 +1,10 @@
 /*
  З клавіатури ввести вектор цілих чисел. Визначити значення двох найменших елементів вектора.
- Якщо вони не є однаковими, то замінити ці елементи значенням їх півсуми.
+ Якщо вони не є однаковими, то замінити ці елементи значенням їх півсуми
  */
 
 
-
 #include <stdio.h>
-#include <math.h>
-
 int main() {
     
     int N = 0;
@@ -21,12 +18,12 @@ int main() {
     
     for(int i = 0; i < N; i++) {
         printf("Введіть ціле число (№%d): ", (i+1));
-        scanf("%d",&vect[i]);
+        scanf("%d",(vect + i));
     }
     
     printf("Ваш вектор чисел: ");
     for(int i = 0; i < N; i++){
-        printf("%d   ", vect[i]);
+        printf("%d   ", *(vect + i));
     }
     
 
@@ -71,7 +68,7 @@ int main() {
         vector[index_2] = vector[index_1];
         
         for(int i = 0; i < N; i++)
-            printf("%.1f   ", vector[i]);
+            printf("%.1f   ", *(vector + i));
     }
     
     
