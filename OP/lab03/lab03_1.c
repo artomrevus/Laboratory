@@ -68,7 +68,7 @@ int main() {
         vector[index_2] = vector[index_1];
         
         for(int i = 0; i < N; i++)
-            printf("%.1f   ", *(vector + i));
+            printf("%g   ", *(vector + i));
     }
     
     
