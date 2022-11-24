@@ -2,7 +2,7 @@
 Зсунути в двовимірному масиві всі рядки циклічно вправо на кількість елементів рівну максимальному елементу в цьому рядку. */
 
 #include <stdio.h>
-#include "max_teleport.h"
+#include "func_shift.h"
 #define n 10
 
 int main() {
