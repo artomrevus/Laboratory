@@ -245,11 +245,13 @@ void SearchTwoOldestStudentsInList(struct Node ** ppHead, int count){
  
 void SortSurnameAlpha(struct Node ** ppHead, int count){
     struct Node * pTemp1 = *ppHead;
-    struct Node * pTemp2 = pTemp1->pNext;
+    struct Node * pTemp2 = *ppHead;;
     
     for(int i = 0; i < count; i ++){
-        for(;  pTemp2->pNext != NULL; pTemp1 = pTemp2,
-            pTemp2 = pTemp2->pNext){
+        
+        do{
+            pTemp2 = pTemp2->pNext;
+            
             if(strcmp(pTemp1->value.surname, pTemp2->value.surname) >= 0)
             {
                 if(pTemp1 == *ppHead)
@@ -271,9 +273,13 @@ void SortSurnameAlpha(struct Node ** ppHead, int count){
                     pTemp2 = pTemp2->pNext;
                 }
             }
-        }
+            
+            pTemp1 = pTemp2;
+            
+        } while(pTemp2->pNext != NULL);
+        
         pTemp1 = *ppHead;
-        pTemp2 = pTemp1->pNext;
+        pTemp2 = *ppHead;;
     }
 }
 
@@ -441,3 +447,6 @@ void DeleteBadStudents(struct Node ** ppHead, int count){
             }
     }
 }
+
+
+
